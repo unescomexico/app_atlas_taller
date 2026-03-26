@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Técnicas Textiles · Taller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Técnicas Textiles <em>· Taller</em></h1>
+  <div class="header-right">
+    <span id="save-status" class="save-status">✓ Guardado</span>
+    <button class="btn btn-save" id="btn-save">💾 Guardar</button>
+    <div class="tabs">
+      <button class="tab on" onclick="App.goTab(0)">① Clasificación</button>
+      <button class="tab"    onclick="App.goTab(1)">② Técnicas</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══ VIEW 1: Clasificación ══ -->
+<div class="view on" id="v1">
+  <div class="col-tree" id="col-tree">
+    <div class="tree-hd">
+      <h3>Árbol</h3>
+      <button class="btn btn-p btn-sm" id="btn-add-root">+ Raíz</button>
+    </div>
+    <div class="tree-body" id="tree-nav"></div>
+  </div>
+
+  <div class="resize-handle" id="rh-tree"></div>
+
+  <div class="col-editor">
+    <div class="ph" id="ed-ph">
+      <div class="ph-icon">🌿</div>
+      <p>Selecciona un nodo del árbol<br>o crea una categoría raíz</p>
+      <button class="add-root-btn" id="btn-add-root-2">＋ Nueva categoría raíz</button>
+    </div>
+    <div id="ed-ct" style="display:none"></div>
+  </div>
+
+  <div class="resize-handle" id="rh-diag"></div>
+
+  <div class="col-diag" id="col-diag">
+    <div class="diag-hd">
+      <h3>Diagrama en vivo</h3>
+      <div style="display:flex;gap:5px">
+        <button class="btn btn-s btn-sm" id="btn-zoom-in" title="Zoom +">+</button>
+        <button class="btn btn-s btn-sm" id="btn-zoom-out" title="Zoom −">−</button>
+        <button class="btn btn-s btn-sm" onclick="Tree.exportSVG()">⬇ SVG</button>
+      </div>
+    </div>
+    <div id="svg-wrap"></div>
+  </div>
+</div>
+
+<!-- ══ VIEW 2: Técnicas ══ -->
+<div class="view" id="v2">
+  <div class="tech-col">
+    <div class="p2-hd">
+      <h2>Técnicas <span id="tech-count" class="count-badge">—</span></h2>
+      <div class="sb">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="srch" placeholder="Buscar por nombre o estado…">
+      </div>
+    </div>
+    <div id="sbar" class="sbar"></div>
+    <div class="pw"><div class="pf" id="pf"></div></div>
+    <p class="pl" id="pl"></p>
+    <div class="fr" id="fr"></div>
+    <div class="tl" id="tl"></div>
+    <div class="exp-row">
+      <button class="btn btn-p" onclick="App.downloadExport()">⬇ Exportar CSV</button>
+      <button class="btn btn-s" onclick="Tags.exportJSON()">⬇ Exportar JSON</button>
+    </div>
+  </div>
+
+  <div class="resize-handle" id="rh-drop"></div>
+
+  <div class="drop-col" id="drop-col">
+    <div class="dc-hd">Clasificación (tags)</div>
+    <p class="dc-hint">Arrastra técnicas aquí, o abre la ficha con 📋 y usa "Clasificación"</p>
+    <div id="db"></div>
+  </div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <div class="modal-inner" id="modal-inner"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="js/utils.js"></script>
+<script src="js/tree.js"></script>
+<script src="js/tags.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

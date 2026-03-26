@@ -1,0 +1,115 @@
+{
+  "nodes": {
+    "n7dxjaj": {
+      "id": "n7dxjaj",
+      "name": "Manufactura",
+      "color": "#c0385a",
+      "parentId": null,
+      "children": [
+        "nt4rctn",
+        "n815pua"
+      ]
+    },
+    "nt4rctn": {
+      "id": "nt4rctn",
+      "name": "Bordado",
+      "color": "#c0385a",
+      "parentId": "n7dxjaj",
+      "children": [
+        "nigs8mm",
+        "ndvet8n"
+      ]
+    },
+    "nigs8mm": {
+      "id": "nigs8mm",
+      "name": "Bordado a mano",
+      "color": "#c0385a",
+      "parentId": "nt4rctn",
+      "children": []
+    },
+    "ndvet8n": {
+      "id": "ndvet8n",
+      "name": "Bordado a máquina",
+      "color": "#c0385a",
+      "parentId": "nt4rctn",
+      "children": []
+    },
+    "n815pua": {
+      "id": "n815pua",
+      "name": "Tejido",
+      "color": "#2a8a7e",
+      "parentId": "n7dxjaj",
+      "children": [
+        "n9s2mgi",
+        "ns5ekv3"
+      ]
+    },
+    "n9s2mgi": {
+      "id": "n9s2mgi",
+      "name": "Tejido a mano",
+      "color": "#2a8a7e",
+      "parentId": "n815pua",
+      "children": []
+    },
+    "ns5ekv3": {
+      "id": "ns5ekv3",
+      "name": "Telar",
+      "color": "#1a6fa8",
+      "parentId": "n815pua",
+      "children": [
+        "nql3bna",
+        "nobnf4s"
+      ]
+    },
+    "nql3bna": {
+      "id": "nql3bna",
+      "name": "Telar de cintura",
+      "color": "#1a6fa8",
+      "parentId": "ns5ekv3",
+      "children": []
+    },
+    "nobnf4s": {
+      "id": "nobnf4s",
+      "name": "Telar de pedal",
+      "color": "#1a6fa8",
+      "parentId": "ns5ekv3",
+      "children": []
+    },
+    "n5ggi0f": {
+      "id": "n5ggi0f",
+      "name": "Teñido",
+      "color": "#d4650a",
+      "parentId": null,
+      "children": [
+        "nk0onnd",
+        "nwi5c3n",
+        "n1eks7e"
+      ]
+    },
+    "nk0onnd": {
+      "id": "nk0onnd",
+      "name": "Plantas",
+      "color": "#2a8a7e",
+      "parentId": "n5ggi0f",
+      "children": []
+    },
+    "nwi5c3n": {
+      "id": "nwi5c3n",
+      "name": "Animales",
+      "color": "#d4650a",
+      "parentId": "n5ggi0f",
+      "children": []
+    },
+    "n1eks7e": {
+      "id": "n1eks7e",
+      "name": "Minerales",
+      "color": "#1a6fa8",
+      "parentId": "n5ggi0f",
+      "children": []
+    }
+  },
+  "roots": [
+    "n7dxjaj",
+    "n5ggi0f"
+  ]
+}
