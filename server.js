@@ -4,7 +4,7 @@ const path = require('path');
 const Papa = require('papaparse');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DATA_DIR = path.join(__dirname, 'data');
 const TECNICAS_CSV  = path.join(DATA_DIR, 'tecnicas.csv');
 const TAGS_CSV      = path.join(DATA_DIR, 'tags.csv');
@@ -150,7 +150,7 @@ function rebuildExportCSV() {
   } catch(e) { console.error('rebuildExportCSV:', e.message); }
 }
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n✅  Taller de Técnicas Textiles`);
   console.log(`   Abre en: http://localhost:${PORT}\n`);
 });
